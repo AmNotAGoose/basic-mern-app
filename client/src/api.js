@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'localhost:37373'; // Your Express server URL
+const API_URL = 'http://192.168.0.65:37373'; // Your Express server URL
 
 export const getHelloWorld = async () => {
     try {

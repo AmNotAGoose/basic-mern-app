@@ -1,16 +1,17 @@
-require('dotenv').config({path:'./.env'})
 const express = require('express');
-// const db = require('./db/connection.js');
-
+const cors = require('cors');
 const app = express();
-app.use(express.json());
+
+
+app.use(cors({
+    origin: ['192.168.0.165']
+}));
 
 app.get('/', (req, res) => {
-    res.send('Hello World');
-})
+    console.log("asdsad");
+    res.send('Hello World!');
+});
+app.get('/apps', (req, res) => res.send('apps!'));
 
-const APP_PORT = process.env.APP_PORT;
-
-app.listen(APP_PORT, () => {
-    console.log(`Server is running on port ${APP_PORT}`);
-})
+// node --env-file=.env .
+app.listen(37373, () => console.log(`Example app listening on port ${process.env.EXPRESS_PORT}!`));
